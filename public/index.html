@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="toDo">
+  <head>
+    <meta charset="utf-8">
+    <title>ToDo App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+  </head>
+  <body ng-controller="mainCtrl">
+    <h1>{{test}}</h1>
+    <button ng-click='add=true'>Add Todo</button>
+    <div ng-show="add">
+      <form ng-submit='newTodo(todo)' >
+        <input type="text" ng-model="todo">
+      </form>
+    </div>
+    <div ng-repeat='todo in todos'>
+      <h2>{{todo.description}} In Progress <input type="checkbox" ng-model="progress"> Done <input type="checkbox" ng-model="done"> <button ng-click='killTodo(todo._id)'>Remove</button></h3> 
+    </div>
+
+    <script src="./app.js"></script>
+    <script src="./mainCtrl.js"></script>
+    <script src="./mainServ.js"></script>
+  </body>
+</html>
